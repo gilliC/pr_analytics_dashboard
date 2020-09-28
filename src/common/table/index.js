@@ -23,7 +23,7 @@ const useStyles = makeStyles({
 
 
 
-export const Table = ({ data, title }) => {
+export const Table = ({ data, title, columns }) => {
   const classes = useStyles();
 
   const rowComponents = data.map(row=> <Row key={row.id} {...row} />);
@@ -33,8 +33,8 @@ export const Table = ({ data, title }) => {
         <TableHead>
           <TableTitle title={title}/>
           <TableRow>
-            <TableCell className={classes.rowHeader}>Name</TableCell>
-            <TableCell className={classes.rowHeader}>Amount</TableCell>
+            <TableCell className={classes.rowHeader}>{columns[0]}</TableCell>
+            <TableCell className={classes.rowHeader}>{columns[1]}</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>{rowComponents}</TableBody>

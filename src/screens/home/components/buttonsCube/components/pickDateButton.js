@@ -11,6 +11,9 @@ const useStyles = makeStyles(theme=>({
     backgroundColor: 'white',
     color: MAIN_BLUE,
     fontFamily: FONT_REG,
+    borderColor: MAIN_BLUE,
+    borderWidth: 1,
+    borderStyle: 'solid',
     [theme.breakpoints.down("sm")]: {
       width: "100%",
       height: "95%",

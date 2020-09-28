@@ -23,16 +23,17 @@ const getTableData = () => {
     return null;
   }
   const tableData = convertObjectToTableData(mergersStats);
-  console.log({tableData})
   return orderBy(tableData, 'value', 'desc');
 };
+
+const columns = ["Name", "Amount"];
 
 export const BestMergerTable = (props) => {
   const classes = useStyles();
   const tableData = getTableData();
   return (
     <Grid item md={4} className={classes.tableContainer}>
-      <Table data={tableData} title="Best Merger" />
+      <Table data={tableData} title="Best Merger" columns={columns} />
     </Grid>
   );
 };

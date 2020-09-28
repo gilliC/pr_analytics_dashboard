@@ -27,12 +27,14 @@ const getTableData = () => {
   });
 };
 
+const columns = ["id", "Avg"];
+
 export const PrDurationTable = (props) => {
   const classes = useStyles();
   const tableData = getTableData();
   return (
     <Grid item md={4} className={classes.tableContainer}>
-        <Table data={tableData} title="PR Duration" />
+        <Table data={tableData} title="PR Duration" columns={columns} />
     </Grid>
   );
 };
