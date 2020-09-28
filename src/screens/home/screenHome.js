@@ -1,9 +1,10 @@
 import React from "react";
-import { Grid } from "@material-ui/core";
+import Grid from "@material-ui/core/Grid";
 import { makeStyles } from "@material-ui/core/styles";
 import { ScreenTitle } from "./components/title";
 import { BACKGROUND_GRAY } from "../../consts";
 import { MainNumbersRow } from "./components/mainNumbersRow";
+import Table from "../../common/table";
 
 const useStyles = makeStyles({
   container: {
@@ -22,9 +23,14 @@ export const ScreenHome = (props) => {
   const classes = useStyles();
   return (
     <div className={classes.container}>
-      <Grid lg={12}>
+      <Grid md={12}>
         <ScreenTitle />
         <MainNumbersRow />
+        <div style={{height:20}} />
+        <Grid md={4}>
+        <Table/>
+
+        </Grid>
       </Grid>
     </div>
   );

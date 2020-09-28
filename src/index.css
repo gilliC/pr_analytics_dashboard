@@ -8,3 +8,9 @@ body {
   font-family: 'HKGrotesk';
   src: local('HKGrotesk'), url(./fonts/HKGrotesk-Regular.otf) format('truetype');
 }
+
+
+@font-face {
+  font-family: 'HKGroteskSemi';
+  src: local('HKGrotesk'), url(./fonts/HKGrotesk-SemiBold.otf) format('truetype');
+}
