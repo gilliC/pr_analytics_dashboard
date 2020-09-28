@@ -7,15 +7,17 @@ import TableContainer from "@material-ui/core/TableContainer";
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
+import { TableTitle } from "./components/title";
+import { FONT_SEMI, TEXT_BLACK } from "../../consts";
+import Row from "./components/row";
 
 const useStyles = makeStyles({
-  table: {
-    marginRight: 15,
-  },
-  title: {
-    fontFamily: "HKGroteskSemi",
+  rowHeader: {
+    fontFamily: FONT_SEMI,
+    color: TEXT_BLACK,
     fontSize: 18,
-    padding: 20,
+    paddingLeft: 20,
+    paddingBottom: 20,
   },
 });
 
@@ -28,29 +30,19 @@ const rows = [
   createData("EllaC", 12),
   createData("EllaC", 12),
 ];
-const getRow = (row) => {
-  return (
-    <TableRow key={row.name}>
-      <TableCell scope="row"> {row.name} </TableCell>
-      <TableCell>{row.calories}</TableCell>
-    </TableRow>
-  );
-};
+
 export default function Table() {
   const classes = useStyles();
 
-  const rowComponents = rows.map(getRow);
+  const rowComponents = rows.map(row=> <Row key={row.name} {...row} />);
   return (
-    <TableContainer component={Paper}>
-      <MUITable className={classes.table} size="small">
+    <TableContainer className={classes.table} component={Paper}>
+      <MUITable  size="small">
         <TableHead>
+          <TableTitle />
           <TableRow>
-              <h3>Best Merger</h3>
-          </TableRow>
-            
-          <TableRow>
-            <TableCell className={classes.title}>Name</TableCell>
-            <TableCell className={classes.title}>Amount</TableCell>
+            <TableCell className={classes.rowHeader}>Name</TableCell>
+            <TableCell className={classes.rowHeader}>Amount</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>{rowComponents}</TableBody>

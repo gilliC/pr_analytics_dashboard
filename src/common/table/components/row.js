@@ -1,22 +1,24 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
+import TableCell from "@material-ui/core/TableCell";
 import TableRow from "@material-ui/core/TableRow";
 import { FONT_REG, TEXT_BLACK } from "../../../consts";
 
 const useStyles = makeStyles({
-  title: {
+  rowText: {
     fontFamily: FONT_REG,
-    fontSize: 16,
-    paddingLeft: 20,
     color: TEXT_BLACK,
+    fontSize: 16,
+    padding: 20,
   },
 });
 
-export const TableTitle = (props) => {
+export default function Row({ name, calories }) {
   const classes = useStyles();
   return (
     <TableRow>
-      <h3 className={classes.title} >Best Merger</h3>
+      <TableCell className={classes.rowText} scope="row"> {name} </TableCell>
+      <TableCell className={classes.rowText}>{calories}</TableCell>
     </TableRow>
   );
-};
+}

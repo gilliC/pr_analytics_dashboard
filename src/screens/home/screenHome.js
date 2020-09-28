@@ -5,6 +5,7 @@ import { ScreenTitle } from "./components/title";
 import { BACKGROUND_GRAY } from "../../consts";
 import { MainNumbersRow } from "./components/mainNumbersRow";
 import Table from "../../common/table";
+import { TablesRow } from "./components/tablesRow";
 
 const useStyles = makeStyles({
   container: {
@@ -27,10 +28,7 @@ export const ScreenHome = (props) => {
         <ScreenTitle />
         <MainNumbersRow />
         <div style={{height:20}} />
-        <Grid md={4}>
-        <Table/>
-
-        </Grid>
+        <TablesRow />
       </Grid>
     </div>
   );
