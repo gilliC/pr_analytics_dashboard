@@ -23,7 +23,7 @@ const useStyles = makeStyles({
 
 
 
-export default function Table({ data, title }) {
+export const Table = ({ data, title }) => {
   const classes = useStyles();
 
   const rowComponents = data.map(row=> <Row key={row.id} {...row} />);

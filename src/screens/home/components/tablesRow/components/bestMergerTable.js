@@ -1,7 +1,7 @@
 import React from "react";
 import Grid from "@material-ui/core/Grid";
 import { makeStyles } from "@material-ui/core/styles";
-import Table from "../../../../../common/table";
+import { Table } from "../../../../../common/table";
 import data from "../../../../../../data.json";
 import { convertObjectToTableData } from "../../../../../logic/convertObjectToTableData";
 

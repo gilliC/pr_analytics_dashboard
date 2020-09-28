@@ -1,7 +1,6 @@
 import React from "react";
 import Grid from "@material-ui/core/Grid";
 import { makeStyles } from "@material-ui/core/styles";
-import Table from "../../../../common/table";
 import { BestMergerTable } from "./components/bestMergerTable";
 import { PrDurationTable } from "./components/prDurationTable";
 

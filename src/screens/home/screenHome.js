@@ -4,7 +4,6 @@ import { makeStyles } from "@material-ui/core/styles";
 import { ScreenTitle } from "./components/title";
 import { BACKGROUND_GRAY } from "../../consts";
 import { MainNumbersRow } from "./components/mainNumbersRow";
-import Table from "../../common/table";
 import { TablesRow } from "./components/tablesRow";
 
 const useStyles = makeStyles({
