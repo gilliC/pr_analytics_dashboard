@@ -5,8 +5,9 @@ import { Card } from "../../../common/card";
 import { ReversedCard } from "../../../common/reversedCard";
 import data from "../../../../data.json";
 import { ButtonsCube } from "./buttonsCube";
+import { ItemContainer } from "./itemContainer";
 
-const useStyles = makeStyles({
+const useStyles = makeStyles(theme => ({
   container: {
     display: "flex",
     flexDirection: "row",
@@ -15,7 +16,7 @@ const useStyles = makeStyles({
     display:"flex",
     flex: 1
   }
-});
+}));
 
 const getAvgPrDuration = () => {
   const array =
@@ -27,39 +28,40 @@ const getAvgPrDuration = () => {
   return avg.toFixed(2);
 };
 
+
 export const MainNumbersRow = (props) => {
   const classes = useStyles();
   const successPrsCount = data && data.success_prs ? data.success_prs.length : 0;
   const failedPrsCount = data && data.failed_prs ? data.failed_prs.length : 0;
   const avgPrDuration = getAvgPrDuration();
   return (
-    <Grid className={classes.container}>
-      <Grid item md={2} sm={12}>
+    <Grid container className={classes.container}>
+      <ItemContainer>
         <Card
           label="Merged Successfuly"
           value={successPrsCount}
           valueType="PRs"
         />
-      </Grid>
-      <Grid item md={2} sm={6}>
+      </ItemContainer>
+      <ItemContainer>
         <Card label="Merge failed" value={failedPrsCount} valueType="PRs" />
-      </Grid>
-      <Grid item md={2} sm={6}>
+      </ItemContainer>
+      <ItemContainer>
         <ReversedCard
           label="AVG PR merge time "
           value={avgPrDuration}
           valueType="Minutes"
         />
-      </Grid>
-      <Grid item md={2} sm={6}>
+      </ItemContainer>
+      <ItemContainer>
         {/* <Card label="AVG PR merge time " value={35} valueType="Minutes" /> */}
-      </Grid>
-      <Grid item md={2} sm={6}>
+      </ItemContainer>
+      <ItemContainer>
         {/* <Card label="AVG PR merge time " value={35} valueType="Minutes" /> */}
-      </Grid>
-      <Grid item md={2} className={classes.buttonsContaier} sm={6}>
+      </ItemContainer>
+      <ItemContainer className={classes.buttonsContaier}>
        <ButtonsCube /> 
-      </Grid>
+      </ItemContainer>
     </Grid>
   );
 };

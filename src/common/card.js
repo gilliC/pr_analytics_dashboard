@@ -3,7 +3,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import { FONT_REG, TEXT_GRAY, TEXT_BLACK, MAIN_BLUE } from "../consts";
 import Paper from "@material-ui/core/Paper";
 
-const useStyles = makeStyles({
+const useStyles = makeStyles(theme=>({
 
   root: {
     height: '100%',
@@ -15,6 +15,12 @@ const useStyles = makeStyles({
     borderLeftColor: MAIN_BLUE,
     borderLeftWidth: 5,
     borderLeftStyle: 'solid',
+    [theme.breakpoints.down("sm")]: {
+      width: "98%",
+      height: "95%",
+      margin: 0,
+      padding: 0
+    },
   },
   title: {
     fontFamily: FONT_REG,
@@ -27,7 +33,7 @@ const useStyles = makeStyles({
     fontSize: 35,
     margin: 0
   }
-});
+}));
 
 export const Card = (props) => {
   const classes = useStyles();

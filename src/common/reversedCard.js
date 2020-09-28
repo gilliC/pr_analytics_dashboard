@@ -3,7 +3,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import { FONT_REG, MAIN_BLUE } from "../consts";
 import Paper from "@material-ui/core/Paper";
 
-const useStyles = makeStyles({
+const useStyles = makeStyles(theme=> ({
   root: {
     height: '100%',
     padding: 5,
@@ -12,6 +12,12 @@ const useStyles = makeStyles({
     display: 'flex',
     flexDirection: 'column',
     backgroundColor: MAIN_BLUE,
+    [theme.breakpoints.down("sm")]: {
+      width: "100%",
+      height: "95%",
+      margin: 0,
+      padding: 0
+    },
   },
   title: {
     fontFamily: FONT_REG,
@@ -24,7 +30,7 @@ const useStyles = makeStyles({
     fontSize: 35,
     margin: 0
   }
-});
+}));
 
 export const ReversedCard = (props) => {
   const classes = useStyles();
