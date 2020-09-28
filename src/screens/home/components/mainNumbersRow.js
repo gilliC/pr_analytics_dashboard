@@ -4,12 +4,17 @@ import Grid from "@material-ui/core/Grid";
 import { Card } from "../../../common/card";
 import { ReversedCard } from "../../../common/reversedCard";
 import data from "../../../../data.json";
+import { ButtonsCube } from "./buttonsCube";
 
 const useStyles = makeStyles({
   container: {
     display: "flex",
     flexDirection: "row",
   },
+  buttonsContaier: {
+    display:"flex",
+    flex: 1
+  }
 });
 
 const getAvgPrDuration = () => {
@@ -55,8 +60,8 @@ export const MainNumbersRow = (props) => {
       <Grid item md={2}>
         {/* <Card label="AVG PR merge time " value={35} valueType="Minutes" /> */}
       </Grid>
-      <Grid item md={2}>
-        <Card label="AVG PR merge time " value={35} valueType="Minutes" />
+      <Grid item md={2} className={classes.buttonsContaier}>
+       <ButtonsCube /> 
       </Grid>
     </Grid>
   );
