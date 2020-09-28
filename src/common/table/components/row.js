@@ -13,12 +13,13 @@ const useStyles = makeStyles({
   },
 });
 
-export default function Row({ name, calories }) {
+export default function Row({ id, value }) {
   const classes = useStyles();
+  console.log({id, value})
   return (
     <TableRow>
-      <TableCell className={classes.rowText} scope="row"> {name} </TableCell>
-      <TableCell className={classes.rowText}>{calories}</TableCell>
+      <TableCell className={classes.rowText} scope="row"> {id} </TableCell>
+      <TableCell className={classes.rowText}>{value}</TableCell>
     </TableRow>
   );
 }

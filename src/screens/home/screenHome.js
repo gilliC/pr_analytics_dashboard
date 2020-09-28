@@ -24,7 +24,7 @@ export const ScreenHome = (props) => {
   const classes = useStyles();
   return (
     <div className={classes.container}>
-      <Grid md={12}>
+      <Grid item md={12}>
         <ScreenTitle />
         <MainNumbersRow />
         <div style={{height:20}} />

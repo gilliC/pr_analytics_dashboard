@@ -26,7 +26,7 @@ const useStyles = makeStyles({
 export default function Table({ data, title }) {
   const classes = useStyles();
 
-  const rowComponents = data.map(row=> <Row key={row.name} {...row} />);
+  const rowComponents = data.map(row=> <Row key={row.id} {...row} />);
   return (
     <TableContainer className={classes.table} component={Paper}>
       <MUITable  size="small">

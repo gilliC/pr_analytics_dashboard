@@ -7,8 +7,10 @@ const useStyles = makeStyles({
   title: {
     fontFamily: FONT_REG,
     fontSize: 16,
+    padding: 16,
     paddingLeft: 20,
     color: TEXT_BLACK,
+    textAlign: 'left'
   },
 });
 
@@ -16,7 +18,7 @@ export const TableTitle = ({ title }) => {
   const classes = useStyles();
   return (
     <TableRow>
-      <h3 className={classes.title}>{title}</h3>
+      <th className={classes.title}>{title}</th>
     </TableRow>
   );
 };

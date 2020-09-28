@@ -2,6 +2,8 @@ import React from "react";
 import Grid from "@material-ui/core/Grid";
 import { makeStyles } from "@material-ui/core/styles";
 import Table from "../../../../common/table";
+import { BestMergerTable } from "./components/bestMergerTable";
+import { PrDurationTable } from "./components/prDurationTable";
 
 const useStyles = makeStyles({
   container: {
@@ -14,28 +16,13 @@ const useStyles = makeStyles({
   },
 });
 
-function createData(name, calories) {
-  return { name, calories };
-}
-
-const data = [
-  createData("EllaC", 12),
-  createData("EllaC", 12),
-  createData("EllaC", 12),
-];
-
 export const TablesRow = (props) => {
   const classes = useStyles();
   return (
-    <Grid md={12} className={classes.container}>
-      <Grid md={4} className={classes.tableContainer}>
-        <Table data={data} title="Best Merger" />
-      </Grid>
-      <Grid md={4} className={classes.tableContainer}>
-        <Table data={data} title="PR Duration" />
-      </Grid>
-      <Grid md={4} className={classes.tableContainer}>
-        <Table data={data} title="Best Merger" />
+    <Grid item md={12} className={classes.container}>
+      <BestMergerTable />
+      <PrDurationTable />
+      <Grid item md={4} className={classes.tableContainer}>
       </Grid>
     </Grid>
   );
