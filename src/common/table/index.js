@@ -21,25 +21,17 @@ const useStyles = makeStyles({
   },
 });
 
-function createData(name, calories) {
-  return { name, calories };
-}
 
-const rows = [
-  createData("EllaC", 12),
-  createData("EllaC", 12),
-  createData("EllaC", 12),
-];
 
-export default function Table() {
+export default function Table({ data, title }) {
   const classes = useStyles();
 
-  const rowComponents = rows.map(row=> <Row key={row.name} {...row} />);
+  const rowComponents = data.map(row=> <Row key={row.name} {...row} />);
   return (
     <TableContainer className={classes.table} component={Paper}>
       <MUITable  size="small">
         <TableHead>
-          <TableTitle />
+          <TableTitle title={title}/>
           <TableRow>
             <TableCell className={classes.rowHeader}>Name</TableCell>
             <TableCell className={classes.rowHeader}>Amount</TableCell>

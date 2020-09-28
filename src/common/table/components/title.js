@@ -12,11 +12,11 @@ const useStyles = makeStyles({
   },
 });
 
-export const TableTitle = (props) => {
+export const TableTitle = ({ title }) => {
   const classes = useStyles();
   return (
     <TableRow>
-      <h3 className={classes.title} >Best Merger</h3>
+      <h3 className={classes.title}>{title}</h3>
     </TableRow>
   );
 };
