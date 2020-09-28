@@ -3,6 +3,7 @@ import Grid from "@material-ui/core/Grid";
 import { makeStyles } from "@material-ui/core/styles";
 import Table from "../../../../../common/table";
 import data from "../../../../../../data.json";
+import { convertObjectToTableData } from "../../../../../logic/convertObjectToTableData";
 
 const useStyles = makeStyles({
   container: {
@@ -15,32 +16,17 @@ const useStyles = makeStyles({
   },
 });
 
-function createData(name, calories) {
-  return { name, calories };
-}
-
-const dataS = [
-  createData("EllaC", 12),
-  createData("EllaC", 12),
-  createData("EllaC", 12),
-];
-
 const getTableData = () => {
-  const tableDataRaw = data && data.best_merger;
-  if (!tableDataRaw) {
+  const mergersStats = data && data.best_merger;
+  if (!mergersStats) {
     return null;
   }
-  const dataIntoArray = Object.entries(tableDataRaw);
-  return dataIntoArray.map(([id, value]) => {
-    const object = { id, value };
-    return object;
-  });
+  return convertObjectToTableData(mergersStats);
 };
 
 export const BestMergerTable = (props) => {
   const classes = useStyles();
   const tableData = getTableData();
-  console.log({ tableData });
   return (
     <Grid item md={4} className={classes.tableContainer}>
       <Table data={tableData} title="Best Merger" />

@@ -15,7 +15,6 @@ const useStyles = makeStyles({
 
 export default function Row({ id, value }) {
   const classes = useStyles();
-  console.log({id, value})
   return (
     <TableRow>
       <TableCell className={classes.rowText} scope="row"> {id} </TableCell>

@@ -2,7 +2,8 @@ import React from "react";
 import Grid from "@material-ui/core/Grid";
 import { makeStyles } from "@material-ui/core/styles";
 import Table from "../../../../../common/table";
-import dataS from "../../../../../../data.json";
+import data from "../../../../../../data.json";
+import { convertObjectToTableData } from "../../../../../logic/convertObjectToTableData";
 
 const useStyles = makeStyles({
   container: {
@@ -15,22 +16,23 @@ const useStyles = makeStyles({
   },
 });
 
-function createData(name, calories) {
-  return { name, calories };
-}
-
-const data = [
-  createData("EllaC", 12),
-  createData("EllaC", 12),
-  createData("EllaC", 12),
-];
+const getTableData = () => {
+  const durationStats = data && data.merged_to_duration;
+  if (!durationStats) {
+    return null;
+  }
+  const tableData = convertObjectToTableData(durationStats);
+  return tableData.map(({id, value}) => {
+    return { id, value: value.toFixed(2)}
+  });
+};
 
 export const PrDurationTable = (props) => {
   const classes = useStyles();
-  console.log({dataS})
+  const tableData = getTableData();
   return (
     <Grid item md={4} className={classes.tableContainer}>
-        <Table data={data} title="PR Duration" />
+        <Table data={tableData} title="PR Duration" />
     </Grid>
   );
 };
