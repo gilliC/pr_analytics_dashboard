@@ -9,6 +9,7 @@ const useStyles = makeStyles({
     display: "flex",
     flexDirection: "column",
     justifyContent: "space-evenly",
+    height: '100%'
   },
 
 });
