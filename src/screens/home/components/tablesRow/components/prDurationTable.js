@@ -27,7 +27,7 @@ const getTableData = () => {
   });
 };
 
-const columns = ["id", "Avg"];
+const columns = ["id", "Avg (Min)"];
 
 export const PrDurationTable = (props) => {
   const classes = useStyles();
