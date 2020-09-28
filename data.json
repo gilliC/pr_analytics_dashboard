@@ -35,7 +35,6 @@
   ],
   "success_prs": [
     "7552",
-    "7552",
     "7543",
     "7532",
     "7548",
@@ -84,5 +83,19 @@
     "7583": 24.500008332716668,
     "7585": 37.63334166605
   },
-  "prs_to_ts": [{ "pr_number": "7552", "index": 495, "phase1_ts": 5 }]
+  "search_duration": "5 days & 0 hours",
+  "best_merger": {
+    "kiril": 2,
+    "moyiz": 1,
+    "itamark": 3,
+    "ellac": 2,
+    "guys": 1,
+    "shanil": 5,
+    "meitalz": 1,
+    "guyh": 2,
+    "stava": 2,
+    "inaras": 6,
+    "guytish": 1,
+    "itay.galea": 1
+  }
 }

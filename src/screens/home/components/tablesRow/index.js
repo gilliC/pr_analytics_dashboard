@@ -9,7 +9,7 @@ const useStyles = makeStyles({
     flexDirection: "row",
   },
   tableContainer: {
-    margin: 15,
+    margin: 30,
     marginLeft: 0,
   },
 });
