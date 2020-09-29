@@ -25,7 +25,7 @@ const useStyles = makeStyles(theme=> ({
 export const RefreshButton = (props) => {
   const classes = useStyles();
   const onClick = () => {
-    console.log("onClick REFRESH");
+    window.location.reload(false);
   };
   return (
     <Button className={classes.refresh} variant="contained" onClick={onClick}>
